@@ -11,6 +11,8 @@ class Spree::UserSessionsController < Devise::SessionsController
   end
 
   before_action :set_current_order
+  
+  skip_before_action :verify_authenticity_token
 
   def create
     authenticate_spree_user!
